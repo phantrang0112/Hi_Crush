@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Crush của Trang</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+    <script src="js/placeholderTypewriter.js"></script>
+
+</head>
+
+<body class="img js-fullheight" style="background-image: url(images/bg3.jpg);">
+    <section class="ftco-section">
+        <div class="container">
+
+            <div class="row justify-content-center">
+                <div class="col-md-10 col-lg-7 text-center">
+                    <h4 id="mess" class="text-center" style="color: red;">Thích tui hơm?</h4>
+
+                    <input id="taiSaoThich" class="form-control" style="background: none;" placeholder="Tại sao thích Trang?" onclick="" value="" readonly/><br/>
+                    <button id="gui" class=" mr-md-1 btn btn-primary  px-3" onclick="GuiLiDo()" style="margin-right: 5px;margin-top: 10px;">Gửi cho Trang</button>
+                    <p id="guiLiDo" style="color: #ff0052;">Lý do này đã được gửi cho Trang rồi nha ahihi</p>
+                    <img id="hinh" src="images/Sticker.gif" />
+                    <div class=" social  text-center">
+                        <button id="thich" class=" mr-md-1 btn btn-1 color-green" onclick="Thich()" style="margin-right: 5px;">
+                          Thích nhiều lắm</button>
+                        <button id="khongThich" class=" mr-md-1 btn btn-2 color-green" onclick="KhongThich()">không thích đâu</button>
+                        <!-- <a href="#" class="px-2  mr-md-1 rounded  ">Thích nhiều lắm</a>
+                        <a href="#" class="px-2 py-2 ml-md-1 rounded">không thích đâu</a> -->
+                    </div>
+                <div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.getElementById("taiSaoThich").style.display = "none";
+        document.getElementById("gui").style.display = "none";
+        document.getElementById("guiLiDo").style.display = "none";
+        document.getElementById("hinh").style.display = "none";
+
+        function TaoSoNgauNhien(min, max) {
+            return Math.floor(Math.random() * (max - min)) + min;
+        }
+
+        function GuiLiDo() {
+            document.getElementById("guiLiDo").style.display = "inline";
+            document.getElementById("gui").style.display = "none";
+            document.getElementById("taiSaoThich").style.display = "none";
+            document.getElementById("hinh").style.display = "inline";
+        }
+
+        function TrangCute() {
+
+
+            var trangCute = document.getElementById("taiSaoThich").value;
+            // document.getElementById("taiSaoThich").value = ' Tại Trang xinh gái, hiền lành, tốt bụng, đáng yêu, xịn xò, nhân hậu,... <3>';
+            if (trangCute != "Tại Trang xinh gái, hiền lành, tốt bụng, đáng yêu, xịn xò, nhân hậu,... <3") {
+                document.getElementById("taiSaoThich").value = "Tại Trang xinh gái, hiền lành, tốt bụng, đáng yêu, xịn xò, nhân hậu,... <3";
+            }
+        }
+        var placeholderText = [
+            "Tại Trang xinh gái, hiền lành, tốt bụng, đáng yêu, xịn xò, nhân hậu,... <3>",
+            "Tại thích  Trang không cần lý do <3",
+            "Tại ngưỡng mộ tài năng của Trang <3",
+
+        ];
+        $('#taiSaoThich').placeholderTypewriter({
+            text: placeholderText
+        });
+
+        function Thich() {
+            document.getElementById("khongThich").style.display = "none";
+            document.getElementById("thich").style.display = "none";
+            document.getElementById("taiSaoThich").style.display = "inline";
+            document.getElementById("gui").style.display = "inline";
+
+            document.getElementById("mess").innerHTML = "Tại sao lại thích tui á?";
+
+
+
+        }
+
+        function KhongThich() {
+            var l = TaoSoNgauNhien(20, 112);
+            var r = TaoSoNgauNhien(130, 458);
+
+
+            document.getElementById("khongThich").style.top = r + "px";
+            document.getElementById("khongThich").style.left = l + "px";
+            document.getElementById("khongThich").style.right = "35px";
+
+        }
+    </script>
+
+    <script src="js/jquery.min.js"></script>
+    <!-- <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script> -->
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
